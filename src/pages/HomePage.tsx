@@ -1,11 +1,12 @@
 import { ArrowRight, BarChart3, MessageSquare, Gift, FileText, Leaf, Users, Building } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FacilityLandingPage = () => {
   const navItems = [
-    { label: 'Report', icon: FileText, color: 'from-red-500 to-pink-500' },
-    { label: 'Request', icon: MessageSquare, color: 'from-blue-500 to-cyan-500' },
-    { label: 'Feedback', icon: BarChart3, color: 'from-green-500 to-emerald-500' },
-    { label: 'Rewards', icon: Gift, color: 'from-purple-500 to-violet-500' }
+    { label: 'Report', icon: FileText, color: 'from-red-500 to-pink-500', path: '/report' },
+    { label: 'Request', icon: MessageSquare, color: 'from-blue-500 to-cyan-500', path: '/request' },
+    { label: 'Feedback', icon: BarChart3, color: 'from-green-500 to-emerald-500', path: '/feedback' },
+    { label: 'Rewards', icon: Gift, color: 'from-purple-500 to-violet-500', path: '/reward' }
   ];
 
   return (
@@ -42,7 +43,8 @@ const FacilityLandingPage = () => {
           {/* Quick Navigation Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-20 max-w-4xl mx-auto">
             {navItems.map((item, index) => (
-              <div
+              <Link
+                to={item.path}
                 key={item.label}
                 className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -63,7 +65,7 @@ const FacilityLandingPage = () => {
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -142,12 +144,18 @@ const FacilityLandingPage = () => {
               </blockquote>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-green-500/25">
+                <Link 
+                  to="/impact" 
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-green-500/25"
+                >
                   Learn More
-                </button>
-                <button className="border border-green-500/50 text-green-400 px-8 py-3 rounded-full font-medium hover:bg-green-500/10 transition-colors duration-300">
+                </Link>
+                <Link 
+                  to="/dashboard" 
+                  className="border border-green-500/50 text-green-400 px-8 py-3 rounded-full font-medium hover:bg-green-500/10 transition-colors duration-300"
+                >
                   View Impact Report
-                </button>
+                </Link>
               </div>
             </div>
           </div>

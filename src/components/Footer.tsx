@@ -1,15 +1,48 @@
 import { Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
 import { Separator } from "../components/ui/separator";
 import { Button } from "../components/ui/button";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
-    { section: "Product", links: ["Features", "Pricing", "FAQ", "Testimonials"] },
-    { section: "Resources", links: ["Documentation", "API Reference", "Guides", "Support"] },
-    { section: "Company", links: ["About", "Blog", "Careers", "Contact"] },
-    { section: "Legal", links: ["Privacy", "Terms", "Security", "Cookies"] }
+    { 
+      section: "Services", 
+      links: [
+        { name: "Issue Report", path: "/report" },
+        { name: "Service Request", path: "/request" },
+        { name: "Feedback", path: "/feedback" },
+        { name: "Rewards", path: "/reward" }
+      ] 
+    },
+    { 
+      section: "Resources", 
+      links: [
+        { name: "Chatbot", path: "/chatbot" },
+        { name: "Dashboard", path: "/dashboard" },
+        { name: "Sustainability", path: "/impact" },
+        { name: "FAQ", path: "#" }
+      ] 
+    },
+    { 
+      section: "Company", 
+      links: [
+        { name: "About", path: "#" },
+        { name: "Blog", path: "#" },
+        { name: "Careers", path: "#" },
+        { name: "Contact", path: "#" }
+      ] 
+    },
+    { 
+      section: "Legal", 
+      links: [
+        { name: "Privacy", path: "#" },
+        { name: "Terms", path: "#" },
+        { name: "Security", path: "#" },
+        { name: "Cookies", path: "#" }
+      ] 
+    }
   ];
   
   return (
@@ -31,16 +64,14 @@ export default function Footer() {
                   strokeLinejoin="round" 
                   className="h-5 w-5 text-white"
                 >
-                  <polyline points="15 3 21 3 21 9" />
-                  <polyline points="9 21 3 21 3 15" />
-                  <line x1="21" y1="3" x2="14" y2="10" />
-                  <line x1="3" y1="21" x2="10" y2="14" />
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
               </div>
-              <span className="ml-2 font-bold text-xl">ReconcileAI</span>
+              <span className="ml-2 font-bold text-xl">Facility Services Portal</span>
             </div>
             <p className="mt-4 text-sm text-gray-500 max-w-md">
-              Streamlining bank and ledger reconciliation with intelligent matching algorithms and intuitive reporting tools.
+              Streamlining facility management with intuitive tools for reporting issues, requesting services, and tracking sustainability impact.
             </p>
             <div className="mt-6 flex space-x-4">
               <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
@@ -69,10 +100,13 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold text-gray-900">{column.section}</h3>
                 <ul className="mt-4 space-y-3">
                   {column.links.map((link) => (
-                    <li key={link}>
-                      <a href="#" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-                        {link}
-                      </a>
+                    <li key={link.name}>
+                      <Link 
+                        to={link.path} 
+                        className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -86,11 +120,11 @@ export default function Footer() {
         {/* Footer bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-gray-500 text-center md:text-left">
-            © {currentYear} ReconcileAI. All rights reserved.
+            © {currentYear} Facility Services Portal. All rights reserved.
           </p>
           <div className="flex items-center mt-4 md:mt-0">
             <p className="text-xs text-gray-500 flex items-center">
-              Made with <Heart className="h-3 w-3 mx-1 text-red-500" /> by ReconcileAI Team
+              Made with <Heart className="h-3 w-3 mx-1 text-red-500" /> by Facility Services Team
             </p>
           </div>
         </div>
