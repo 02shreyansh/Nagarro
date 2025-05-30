@@ -19,16 +19,6 @@ A modern web application for managing facility services with intuitive reporting
 | 📈 [Dashboard](/dashboard) | View facility metrics and your activity history | ![Dashboard](https://img.shields.io/badge/-Dashboard-orange) |
 | 🌱 [Sustainability](/impact) | Track environmental impact and green initiatives | ![Sustainability](https://img.shields.io/badge/-Sustainability-green) |
 
-## 🚀 Quick Links
-
-<div align="center">
-
-[![Report Issue](https://img.shields.io/badge/📝_Report_Issue-%23FF5252?style=for-the-badge&logo=notion&logoColor=white)](/report)
-[![Make Request](https://img.shields.io/badge/💬_Make_Request-%234FC3F7?style=for-the-badge&logo=notion&logoColor=white)](/request)
-[![View Dashboard](https://img.shields.io/badge/📊_View_Dashboard-%23FFA726?style=for-the-badge&logo=notion&logoColor=white)](/dashboard)
-[![Chatbot](https://img.shields.io/badge/🤖_Chatbot-%2318FFFF?style=for-the-badge&logo=notion&logoColor=white)](/chatbot)
-
-</div>
 
 ## 🛠️ Technologies Used
 
